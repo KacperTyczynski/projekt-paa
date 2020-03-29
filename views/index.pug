@@ -3,19 +3,15 @@ extends layout
 block content
   form(action="/tasks/add", method="post")
     label(for="title")
+      | Tytuł
+    br
+    input(type="text" id="title" name="title")
+    br
+    input(type="submit", value="Dodaj")
+
 table
     tr
       th(scope= "col") Tytuł
     each task in tasks
       tr
         td= task.title
-
-
-
-
-
-      | Tytuł
-    br
-    input(type="text" id="title" name="title")
-    br
-    input(type="submit", value="Dodaj")
