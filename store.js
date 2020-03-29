@@ -26,22 +26,8 @@ const createTask = async (title) => (
   })
 )
 
-const createComment = async (opis) => (
-  new Promise((resolve, reject) => {
-    const generator = storage.TableUtilities.entityGenerator
-    const task = {
-      PartitionKey: generator.String('task'),
-      RowKey: generator.String(uuid.v4()),
-      opis
-    }
 
-    service.insertEntity(table, task, (error, result, response) => {
-      !error ? resolve() : reject()
-    })
-  })
-)
 module.exports = {
   init,
-  createTask,
-  createComment
+  createTask
 }
