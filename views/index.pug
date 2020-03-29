@@ -4,8 +4,18 @@ block content
   form(action="/tasks/add", method="post")
     label(for="title")
       | Tytuł
-    br
-    input(type="text" id="title" name="title")
+ table
+    tr
+      th(scope= "col") Tytuł
+
+
+    each task in tasks
+      tr
+        td= task.title
+
+
+
+
     br
     input(type="submit", value="Dodaj")
 
